@@ -10,6 +10,122 @@
         
 
 
+        function computerplay(com_choice){
+           let rn = 0; 
+           rn = (Math.floor(Math.random() * 3 ) +1);
+               
+              if (rn == 1) {
+                 com_choice = 'c_rock';
+              }
+              else if (rn == 2) {
+                 com_choice = 'c_paper';
+              }
+              else if (rn == 3) {
+                 com_choice = 'c_scissors';
+              }
+           return com_choice;
+
+        }
+        let com_selection = computerplay();  
+        let player_selection = "rock";
+
+        console.log(computerplay(com_selection));
+
+        
+
+
+
+        function playRound (player_selection, com_selection) {
+           let winner = "void";
+    
+           if (((com_selection == 'c_rock') && (player_selection == "rock")) || ((com_selection == 'c_scissors') && (player_selection == "scissors")) || ((com_selection == 'c_paper') && (player_selection == "paper")))
+           {
+              console.log(com_selection, player_selection, "It's a draw");
+              winner = "None";  
+              //print "It's a draw" and print the value of both variables too
+           }
+           else if (((com_selection == 'c_rock') && (player_selection == "paper")) || ((com_selection == 'c_paper') && (player_selection == "scissors")) || ((com_selection == 'c_scissors') && (player_selection == "rock")))
+           {
+              console.log(com_selection, player_selection, "Player wins");
+              winner = "Player";    
+              //player wins
+           }
+           else if (((com_selection == 'c_rock') && (player_selection == "scissors")) || ((com_selection == 'c_paper') && (player_selection == "rock")) || ((com_selection == 'c_scissors') && (player_selection == "paper")))
+           {
+              console.log(com_selection, player_selection, "Computer wins");
+              winner = "Computer";     
+              //computer wins
+           }
+         
+
+           return winner;
+
+        }
+        var result = playRound();
+
+        console.log(playRound(player_selection, com_selection));
+
+        console.log(player_selection, com_selection, "Winner: ", result);
+
+
+
+        var roundresult;
+
+        function game(roundresult){
+           let pwins = 0;
+           let cwins = 0;
+           let draws = 0;
+           let victor;
+
+           for (i = 0; i < 5; i++) {
+              //run the round
+              roundresult = playRound();
+              if (roundresult = "Player")
+              {
+                 pwins +=1; 
+              }  
+              else if (roundresult = "Computer")
+              {
+                 cwins +=1; 
+              }  
+              else
+              {
+                 draws +=1;
+              }
+
+              
+           }
+
+            if (pwins > cwins) 
+            {
+               victor = "Player";
+               console.log("PlayerScore: ", pwins);
+            }
+            else if (cwins > pwins) 
+            {
+               victor = "Computer";
+               console.log("ComputerScore:", wins);
+            }
+            else 
+            {
+               victor = "Draw";
+               console.log("PLscore: ", pwins, "CSscore: ", cwins, "Tied");
+
+            }
+            console.log("PLscore: ", pwins, "CSscore: ", cwins);
+            
+            return victor;
+           
+           //stuff.
+
+            
+        }
+        
+
+
+        const ultwin = game();
+        console.log("The victor is: ", ultwin);
+
 
 
 
